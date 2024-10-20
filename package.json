@@ -30,30 +30,12 @@
     "npm": ">=10.8.1"
   },
   "scripts": {
-    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore",
-    "format": "prettier --write src/",
-    "docs:dev": "vitepress dev docs",
-    "docs:build": "vitepress build docs",
-    "docs:preview": "vitepress preview docs",
-    "generate-pwa-assets": "pwa-assets-generator"
-  },
-  "dependencies": {
-    "vue": "^3.2.45",
-    "vue-i18n": "^9.2.2",
-    "yup": "^1.2.0"
+    "dev": "vitepress dev",
+    "build": "vitepress build",
+    "preview": "vitepress preview"
   },
   "devDependencies": {
-    "@rushstack/eslint-patch": "^1.1.4",
-    "@vite-pwa/assets-generator": "^0.0.10",
-    "@vitejs/plugin-vue": "^4.0.0",
-    "@vue/eslint-config-prettier": "^7.0.0",
-    "autoprefixer": "^10.4.19",
-    "eslint": "^8.22.0",
-    "eslint-plugin-vue": "^9.3.0",
-    "prettier": "^3.3.3",
-    "vite": "^4.0.0",
-    "vite-plugin-html": "^3.2.0",
-    "vite-plugin-pwa": "^0.16.5",
-    "vitepress": "^1.0.0-rc.20"
+    "@vite-pwa/vitepress": "^0.5.3",
+    "vitepress": "^1.4.1"
   }
 }

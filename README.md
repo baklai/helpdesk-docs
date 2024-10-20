@@ -23,10 +23,13 @@ $ npm install
 
 ## Project env variables
 
-| Key    | Comment             |
-| ------ | ------------------- |
-| `PORT` | API port (optional) |
-| `HOST` | API host (optional) |
+| Key                      | Comment           |
+| ------------------------ | ----------------- |
+| `VITE_PORT`              | Port (optional)   |
+| `VITE_HOST`              | Host (optional)   |
+| `VITE_URL_HELPDESK`      | HELPDESK URL      |
+| `VITE_URL_HELPDESK_API`  | API HELPDESK URL  |
+| `VITE_URL_HELPDESK_DOCS` | DOCS HELPDESK URL |
 
 ## Running the app
 
@@ -75,8 +78,6 @@ in your browser helpdesk docs by typing http://localhost:5173/.
 services:
   docs:
     image: baklai/helpdesk-docs:latest
-    volumes:
-      - ${STORAGE_PATH}:${STORAGE_PATH}
     env_file: .env
     environment:
       - NODE_ENV=production
