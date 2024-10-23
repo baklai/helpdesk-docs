@@ -1,5 +1,5 @@
 {
-  "name": "helpdesk-docs-v1",
+  "name": "helpdesk-docs",
   "version": "1.0.0",
   "type": "module",
   "description": "Helpdesk Docs - Web application of technical support",
@@ -13,21 +13,21 @@
       "linkedin": "https://www.linkedin.com/in/baklai/"
     }
   },
-  "homepage": "https://github.com/baklai/helpdesk-docs-v1#readme",
+  "homepage": "https://github.com/baklai/helpdesk-docs#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/baklai/helpdesk-docs-v1.git"
+    "url": "git+https://github.com/baklai/helpdesk-docs.git"
   },
   "bugs": {
-    "url": "https://github.com/baklai/helpdesk-docs-v1/issues"
+    "url": "https://github.com/baklai/helpdesk-docs/issues"
   },
   "keywords": [
     "vitepress"
   ],
   "license": "MIT",
   "engines": {
-    "node": ">=20.16.0",
-    "npm": ">=10.8.1"
+    "node": ">=20",
+    "npm": ">=10"
   },
   "scripts": {
     "dev": "vitepress dev",
