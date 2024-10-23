@@ -22,12 +22,6 @@ COPY . .
 # Build the application (produces dist/folder)
 RUN npm run build
 
-# Defining an argument for a port
-ARG PORT=5173
-
-# Defining an argument for a host
-ARG HOST=0.0.0.0
-
 # Set the working directory for the final image
 FROM node:${NODE_VERSION}-alpine AS production
 
