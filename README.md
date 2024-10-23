@@ -1,6 +1,6 @@
 # Helpdesk DOCS («Heldesk Service»)
 
-Helpdesk Документи технічної підтримки
+Веб-додаток документації технічної підтримки
 
 ## Prerequisites
 
