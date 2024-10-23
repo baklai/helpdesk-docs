@@ -15,7 +15,7 @@ hero:
       text: Розпочати з доків
       link: /docs/
     - theme: alt
-      text: Helpdesk
+      text: HELPDESK
       link: /docs/
 
 features:

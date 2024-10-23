@@ -40,26 +40,16 @@ const SIDEBAR = [
       {
         text: 'Мережева інформація',
         collapsed: false,
-        items: [
-          { text: 'Календар подій', link: '/docs/events-calendar' },
-          { text: 'Мережева інформація', link: '/docs/network-info' },
-          { text: 'Журнал техпідтримки', link: '/docs/technical-support' },
-          { text: 'ПК SysInspector', link: '/docs/pc-sys-inspector' }
-        ]
+        items: [{ text: 'Мережева інформація', link: '/docs/network-info' }]
       }
     ]
   },
   {
     items: [
       {
-        text: 'Журнал техпідтримки',
+        text: 'Технічна підтримка',
         collapsed: false,
-        items: [
-          { text: 'Календар подій', link: '/docs/events-calendar' },
-          { text: 'Мережева інформація', link: '/docs/network-info' },
-          { text: 'Журнал техпідтримки', link: '/docs/technical-support' },
-          { text: 'ПК SysInspector', link: '/docs/pc-sys-inspector' }
-        ]
+        items: [{ text: 'Технічна підтримка', link: '/docs/technical-support' }]
       }
     ]
   },
@@ -68,12 +58,7 @@ const SIDEBAR = [
       {
         text: 'ПК SysInspector',
         collapsed: false,
-        items: [
-          { text: 'Календар подій', link: '/docs/events-calendar' },
-          { text: 'Мережева інформація', link: '/docs/network-info' },
-          { text: 'Журнал техпідтримки', link: '/docs/technical-support' },
-          { text: 'ПК SysInspector', link: '/docs/pc-sys-inspector' }
-        ]
+        items: [{ text: 'ПК SysInspector', link: '/docs/pc-sys-inspector' }]
       }
     ]
   }

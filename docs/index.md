@@ -1,9 +1,9 @@
 ---
-title: Helpdesk Service
+title: Helpdesk
 description: Документація технічної підтримки
 ---
 
-# Helpdesk Service
+# Helpdesk
 
 **Helpdesk** (Служба технічної підтримки, техпідтримка, Technical support, Service desk) — сервісна структура, яка розділяє проблеми користувачів з комп'ютерами (як апаратним, так і програмним забезпеченням) та оргтехнікою.
 
