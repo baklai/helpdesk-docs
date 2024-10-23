@@ -29,7 +29,7 @@ WORKDIR /app
 
 # Copy configuration files and dependencies
 COPY --from=build /app/package*.json ./
-COPY --from=build /app/dist ./dist/
+COPY --from=build /app/.vitepress/dist ./dist/
 
 # We install only production dependencies
 RUN npm install --omit=dev
