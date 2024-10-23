@@ -1,6 +1,6 @@
-# Helpdesk DOCS V1 («Heldesk Service»)
+# Helpdesk DOCS («Heldesk Service»)
 
-Helpdesk Docs of technical support
+Helpdesk Документи технічної підтримки
 
 ## Prerequisites
 
