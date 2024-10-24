@@ -1,5 +1,5 @@
 import { defineConfig, loadEnv } from 'vitepress';
-import { withPwa } from '@vite-pwa/vitepress';
+// import { withPwa } from '@vite-pwa/vitepress';
 
 const { VITE_URL_HELPDESK, VITE_URL_HELPDESK_API, VITE_URL_HELPDESK_DOCS } = loadEnv(
   '',
@@ -64,183 +64,332 @@ const SIDEBAR = [
   }
 ];
 
-export default withPwa(
-  defineConfig({
-    base: '/',
+export default defineConfig({
+  base: '/',
 
-    appearance: true,
-    cleanUrls: true,
-    lastUpdated: true,
+  appearance: true,
+  cleanUrls: true,
+  lastUpdated: true,
 
-    lang: 'uk-UA',
-    title: 'Довідник',
-    titleTemplate: 'HD Довідник • :title',
-    description: 'Керівництво з використання сервісу сервісної підтримки користувачів',
+  lang: 'uk-UA',
+  title: 'Довідник',
+  titleTemplate: 'HD Довідник • :title',
+  description: 'Керівництво з використання сервісу сервісної підтримки користувачів',
 
-    head: [
-      ['meta', { property: 'name', content: 'Dmitrii Baklai' }],
-      ['meta', { property: 'keywords', content: 'helpdesk, documentation' }],
-      ['meta', { property: 'language', content: 'uk-UA' }],
-      [
-        'meta',
-        {
-          property: 'og:title',
-          content:
-            'HD Довідник • Керівництво з використання сервісу сервісної підтримки користувачів'
-        }
-      ],
-      [
-        'meta',
-        {
-          property: 'og:description',
-          content: 'Керівництво з використання сервісу сервісної підтримки користувачів'
-        }
-      ],
-      [
-        'meta',
-        { property: 'og:url', content: `${VITE_URL_HELPDESK_DOCS ? VITE_URL_HELPDESK_DOCS : '/'}` }
-      ],
-      ['meta', { property: 'og:type', content: 'article' }],
-      [
-        'meta',
-        {
-          property: 'og:site_name',
-          content:
-            'HD Довідник • Керівництво з використання сервісу сервісної підтримки користувачів'
-        }
-      ],
-      ['meta', { property: 'og:image', content: `${VITE_URL_HELPDESK_DOCS}/img/logo.svg` }],
-      ['meta', { property: 'og:image:width', content: '512' }],
-      ['meta', { property: 'og:image:height', content: '512' }],
-      ['meta', { property: 'og:keywords', content: 'helpdesk, documentation' }],
-      ['meta', { property: 'og:locale', content: 'uk-UA' }],
-
-      ['link', { rel: 'icon', href: '/favicon.ico' }]
+  head: [
+    ['meta', { property: 'name', content: 'Dmitrii Baklai' }],
+    ['meta', { property: 'keywords', content: 'helpdesk, documentation' }],
+    ['meta', { property: 'language', content: 'uk-UA' }],
+    [
+      'meta',
+      {
+        property: 'og:title',
+        content: 'HD Довідник • Керівництво з використання сервісу сервісної підтримки користувачів'
+      }
     ],
+    [
+      'meta',
+      {
+        property: 'og:description',
+        content: 'Керівництво з використання сервісу сервісної підтримки користувачів'
+      }
+    ],
+    [
+      'meta',
+      { property: 'og:url', content: `${VITE_URL_HELPDESK_DOCS ? VITE_URL_HELPDESK_DOCS : '/'}` }
+    ],
+    ['meta', { property: 'og:type', content: 'article' }],
+    [
+      'meta',
+      {
+        property: 'og:site_name',
+        content: 'HD Довідник • Керівництво з використання сервісу сервісної підтримки користувачів'
+      }
+    ],
+    ['meta', { property: 'og:image', content: `${VITE_URL_HELPDESK_DOCS}/img/logo.svg` }],
+    ['meta', { property: 'og:image:width', content: '512' }],
+    ['meta', { property: 'og:image:height', content: '512' }],
+    ['meta', { property: 'og:keywords', content: 'helpdesk, documentation' }],
+    ['meta', { property: 'og:locale', content: 'uk-UA' }],
 
-    markdown: {
-      theme: 'vitesse-dark',
-      languages: ['cmd', 'bat', 'vb', 'powershell', 'ps', 'ps1'],
-      lineNumbers: false
+    ['link', { rel: 'icon', href: '/favicon.ico' }]
+  ],
+
+  markdown: {
+    theme: 'vitesse-dark',
+    languages: ['cmd', 'bat', 'vb', 'powershell', 'ps', 'ps1'],
+    lineNumbers: false
+  },
+
+  themeConfig: {
+    logo: { src: '/img/logo.svg', alt: 'HD' },
+
+    siteTitle: 'HD Довідник',
+
+    outline: [2, 3],
+
+    outlineTitle: 'На цій сторінці',
+
+    nav: NAVBAR,
+
+    sidebar: {
+      '/docs/': SIDEBAR
     },
 
-    themeConfig: {
-      logo: { src: '/img/logo.svg', alt: 'HD' },
+    aside: true,
 
-      siteTitle: 'HD Довідник',
+    editLink: {
+      pattern: 'https://github.com/baklai/helpdesk-docs-v1/edit/main/src/:path',
+      text: 'Редагувати цю сторінку на GitHub'
+    },
 
-      outline: [2, 3],
+    lastUpdatedText: 'Останнє оновлення',
 
-      outlineTitle: 'На цій сторінці',
+    lastUpdated: {
+      text: 'Останнє оновлення',
+      formatOptions: { dateStyle: 'short' }
+    },
 
-      nav: NAVBAR,
+    docFooter: {
+      prev: 'Попередня сторінка',
+      next: 'Наступна сторінка'
+    },
 
-      sidebar: {
-        '/docs/': SIDEBAR
-      },
+    socialLinks: [{ icon: 'github', link: 'https://github.com/baklai/helpdesk-docs-v1' }],
 
-      aside: true,
+    footer: {
+      message:
+        'Випущено за ліцензією <a href="https://github.com/baklai/helpdesk-docs-v1/blob/main/LICENSE" target="_blank" rel="noopener noreferrer">MIT</a>.',
+      copyright: `Всі права збережено © 2022-${new Date().getFullYear()} <a href="https://github.com/baklai" target="_blank" rel="noopener noreferrer">Dmitrii Baklai</a>`
+    },
 
-      editLink: {
-        pattern: 'https://github.com/baklai/helpdesk-docs-v1/edit/main/src/:path',
-        text: 'Редагувати цю сторінку на GitHub'
-      },
+    darkModeSwitchLabel: 'Зовнішній вигляд',
 
-      lastUpdatedText: 'Останнє оновлення',
+    sidebarMenuLabel: 'Меню',
 
-      lastUpdated: {
-        text: 'Останнє оновлення',
-        formatOptions: { dateStyle: 'short' }
-      },
+    returnToTopLabel: 'Повернутися до початку',
 
-      docFooter: {
-        prev: 'Попередня сторінка',
-        next: 'Наступна сторінка'
-      },
+    langMenuLabel: 'Змінити мову',
 
-      socialLinks: [{ icon: 'github', link: 'https://github.com/baklai/helpdesk-docs-v1' }],
-
-      footer: {
-        message:
-          'Випущено за ліцензією <a href="https://github.com/baklai/helpdesk-docs-v1/blob/main/LICENSE" target="_blank" rel="noopener noreferrer">MIT</a>.',
-        copyright: `Всі права збережено © 2022-${new Date().getFullYear()} <a href="https://github.com/baklai" target="_blank" rel="noopener noreferrer">Dmitrii Baklai</a>`
-      },
-
-      darkModeSwitchLabel: 'Зовнішній вигляд',
-
-      sidebarMenuLabel: 'Меню',
-
-      returnToTopLabel: 'Повернутися до початку',
-
-      langMenuLabel: 'Змінити мову',
-
-      search: {
-        provider: 'local',
-        options: {
-          disableDetailedView: false,
-          disableQueryPersistence: false,
-          translations: {
-            button: {
-              buttonText: 'Пошук',
-              buttonAriaLabel: 'Показати детальний список'
-            },
-            modal: {
-              displayDetails: 'Показати детальний список',
-              resetButtonTitle: 'Скинути пошук',
-              backButtonTitle: 'Закрити пошук',
-              noResultsText: 'Немає результатів для',
-              footer: {
-                selectText: 'вибрати',
-                navigateText: 'для навігації',
-                closeText: 'закрити'
-              }
+    search: {
+      provider: 'local',
+      options: {
+        disableDetailedView: false,
+        disableQueryPersistence: false,
+        translations: {
+          button: {
+            buttonText: 'Пошук',
+            buttonAriaLabel: 'Показати детальний список'
+          },
+          modal: {
+            displayDetails: 'Показати детальний список',
+            resetButtonTitle: 'Скинути пошук',
+            backButtonTitle: 'Закрити пошук',
+            noResultsText: 'Немає результатів для',
+            footer: {
+              selectText: 'вибрати',
+              navigateText: 'для навігації',
+              closeText: 'закрити'
             }
           }
         }
-      },
-
-      i18nRouting: false,
-
-      externalLinkIcon: false,
-
-      notFound: {
-        title: 'СТОРІНКУ НЕ ЗНАЙДЕНО',
-        quote:
-          'Якщо ви не зміните свій напрямок і продовжите шукати, ви можете опинитися там, куди прямуєте.',
-        linkLabel: 'йти додому',
-        linkText: 'На головну сторінку',
-        code: '404'
       }
     },
 
-    srcExclude: ['**/README.md'],
+    i18nRouting: false,
 
-    pwa: {
-      outDir: '.vitepress/dist',
-      includeAssets: ['favicon.ico'],
-      manifest: {
-        name: 'HD Довідник • Керівництво з використання сервісу сервісної підтримки користувачів',
-        short_name: 'HD Довідник',
-        description: 'Керівництво з використання сервісу сервісної підтримки користувачів',
-        theme_color: '#ffffff',
-        icons: [
-          {
-            src: '/img/pwa-64x64.png',
-            sizes: '64x64',
-            type: 'image/png'
-          },
-          {
-            src: '/img/pwa-192x192.png',
-            sizes: '192x192',
-            type: 'image/png'
-          },
-          {
-            src: '/img/pwa-512x512.png',
-            sizes: '512x512',
-            type: 'image/png'
-          }
-        ]
-      }
+    externalLinkIcon: false,
+
+    notFound: {
+      title: 'СТОРІНКУ НЕ ЗНАЙДЕНО',
+      quote:
+        'Якщо ви не зміните свій напрямок і продовжите шукати, ви можете опинитися там, куди прямуєте.',
+      linkLabel: 'йти додому',
+      linkText: 'На головну сторінку',
+      code: '404'
     }
-  })
-);
+  },
+
+  srcExclude: ['**/README.md']
+});
+
+// export default withPwa(
+//   defineConfig({
+//     base: '/',
+
+//     appearance: true,
+//     cleanUrls: true,
+//     lastUpdated: true,
+
+//     lang: 'uk-UA',
+//     title: 'Довідник',
+//     titleTemplate: 'HD Довідник • :title',
+//     description: 'Керівництво з використання сервісу сервісної підтримки користувачів',
+
+//     head: [
+//       ['meta', { property: 'name', content: 'Dmitrii Baklai' }],
+//       ['meta', { property: 'keywords', content: 'helpdesk, documentation' }],
+//       ['meta', { property: 'language', content: 'uk-UA' }],
+//       [
+//         'meta',
+//         {
+//           property: 'og:title',
+//           content:
+//             'HD Довідник • Керівництво з використання сервісу сервісної підтримки користувачів'
+//         }
+//       ],
+//       [
+//         'meta',
+//         {
+//           property: 'og:description',
+//           content: 'Керівництво з використання сервісу сервісної підтримки користувачів'
+//         }
+//       ],
+//       [
+//         'meta',
+//         { property: 'og:url', content: `${VITE_URL_HELPDESK_DOCS ? VITE_URL_HELPDESK_DOCS : '/'}` }
+//       ],
+//       ['meta', { property: 'og:type', content: 'article' }],
+//       [
+//         'meta',
+//         {
+//           property: 'og:site_name',
+//           content:
+//             'HD Довідник • Керівництво з використання сервісу сервісної підтримки користувачів'
+//         }
+//       ],
+//       ['meta', { property: 'og:image', content: `${VITE_URL_HELPDESK_DOCS}/img/logo.svg` }],
+//       ['meta', { property: 'og:image:width', content: '512' }],
+//       ['meta', { property: 'og:image:height', content: '512' }],
+//       ['meta', { property: 'og:keywords', content: 'helpdesk, documentation' }],
+//       ['meta', { property: 'og:locale', content: 'uk-UA' }],
+
+//       ['link', { rel: 'icon', href: '/favicon.ico' }]
+//     ],
+
+//     markdown: {
+//       theme: 'vitesse-dark',
+//       languages: ['cmd', 'bat', 'vb', 'powershell', 'ps', 'ps1'],
+//       lineNumbers: false
+//     },
+
+//     themeConfig: {
+//       logo: { src: '/img/logo.svg', alt: 'HD' },
+
+//       siteTitle: 'HD Довідник',
+
+//       outline: [2, 3],
+
+//       outlineTitle: 'На цій сторінці',
+
+//       nav: NAVBAR,
+
+//       sidebar: {
+//         '/docs/': SIDEBAR
+//       },
+
+//       aside: true,
+
+//       editLink: {
+//         pattern: 'https://github.com/baklai/helpdesk-docs-v1/edit/main/src/:path',
+//         text: 'Редагувати цю сторінку на GitHub'
+//       },
+
+//       lastUpdatedText: 'Останнє оновлення',
+
+//       lastUpdated: {
+//         text: 'Останнє оновлення',
+//         formatOptions: { dateStyle: 'short' }
+//       },
+
+//       docFooter: {
+//         prev: 'Попередня сторінка',
+//         next: 'Наступна сторінка'
+//       },
+
+//       socialLinks: [{ icon: 'github', link: 'https://github.com/baklai/helpdesk-docs-v1' }],
+
+//       footer: {
+//         message:
+//           'Випущено за ліцензією <a href="https://github.com/baklai/helpdesk-docs-v1/blob/main/LICENSE" target="_blank" rel="noopener noreferrer">MIT</a>.',
+//         copyright: `Всі права збережено © 2022-${new Date().getFullYear()} <a href="https://github.com/baklai" target="_blank" rel="noopener noreferrer">Dmitrii Baklai</a>`
+//       },
+
+//       darkModeSwitchLabel: 'Зовнішній вигляд',
+
+//       sidebarMenuLabel: 'Меню',
+
+//       returnToTopLabel: 'Повернутися до початку',
+
+//       langMenuLabel: 'Змінити мову',
+
+//       search: {
+//         provider: 'local',
+//         options: {
+//           disableDetailedView: false,
+//           disableQueryPersistence: false,
+//           translations: {
+//             button: {
+//               buttonText: 'Пошук',
+//               buttonAriaLabel: 'Показати детальний список'
+//             },
+//             modal: {
+//               displayDetails: 'Показати детальний список',
+//               resetButtonTitle: 'Скинути пошук',
+//               backButtonTitle: 'Закрити пошук',
+//               noResultsText: 'Немає результатів для',
+//               footer: {
+//                 selectText: 'вибрати',
+//                 navigateText: 'для навігації',
+//                 closeText: 'закрити'
+//               }
+//             }
+//           }
+//         }
+//       },
+
+//       i18nRouting: false,
+
+//       externalLinkIcon: false,
+
+//       notFound: {
+//         title: 'СТОРІНКУ НЕ ЗНАЙДЕНО',
+//         quote:
+//           'Якщо ви не зміните свій напрямок і продовжите шукати, ви можете опинитися там, куди прямуєте.',
+//         linkLabel: 'йти додому',
+//         linkText: 'На головну сторінку',
+//         code: '404'
+//       }
+//     },
+
+//     srcExclude: ['**/README.md'],
+
+//     pwa: {
+//       outDir: '.vitepress/dist',
+//       includeAssets: ['favicon.ico'],
+//       manifest: {
+//         name: 'HD Довідник • Керівництво з використання сервісу сервісної підтримки користувачів',
+//         short_name: 'HD Довідник',
+//         description: 'Керівництво з використання сервісу сервісної підтримки користувачів',
+//         theme_color: '#ffffff',
+//         icons: [
+//           {
+//             src: '/img/pwa-64x64.png',
+//             sizes: '64x64',
+//             type: 'image/png'
+//           },
+//           {
+//             src: '/img/pwa-192x192.png',
+//             sizes: '192x192',
+//             type: 'image/png'
+//           },
+//           {
+//             src: '/img/pwa-512x512.png',
+//             sizes: '512x512',
+//             type: 'image/png'
+//           }
+//         ]
+//       }
+//     }
+//   })
+// );
