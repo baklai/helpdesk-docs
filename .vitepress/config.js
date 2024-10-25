@@ -67,7 +67,7 @@ const SIDEBAR = [
 
 export default withPwa(
   defineConfig({
-    base: '/',
+    base: '/docs',
 
     appearance: true,
     cleanUrls: true,
