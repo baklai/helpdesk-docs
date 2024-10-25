@@ -1,62 +1,61 @@
-# Helpdesk DOCS («Heldesk Service»)
+# Helpdesk Docs («Heldesk Service»)
 
 Веб-додаток документації технічної підтримки
 
-## Prerequisites
+## Передумови
 
-- Git - [Download & Install Git](https://git-scm.com/downloads).
-- Node.js - [Download & Install Node.js](https://nodejs.org/en/download/) and the npm package manager.
+- Git - [Завантажте та встановіть Git](https://git-scm.com/downloads).
+- Node.js - [Завантажте та встановіть Node.js](https://nodejs.org/en/download/) і менеджер пакетів npm.
 
-## Downloading
+### Завантаження
 
 ```bash
 git clone
 ```
 
-## Installing NPM modules
+### Встановлення модулів NPM
 
 ```bash
-# install dependencies
 $ npm install
 ```
 
-## Project env variables
+### Змінні проекту
 
-| Key                      | Comment           |
-| ------------------------ | ----------------- |
-| `VITE_URL_HELPDESK`      | HELPDESK URL      |
-| `VITE_URL_HELPDESK_API`  | API HELPDESK URL  |
-| `VITE_URL_HELPDESK_DOCS` | DOCS HELPDESK URL |
+| Ключ                 | Коментар          |
+| -------------------- | ----------------- |
+| `VITE_APP_BASE_URL`  | HELPDESK URL      |
+| `VITE_API_BASE_URL`  | API HELPDESK URL  |
+| `VITE_DOCS_BASE_URL` | DOCS HELPDESK URL |
 
-## Running the app
+### Компіляція та гаряче перезавантаження для розробки
 
 ```bash
 $ npm run dev
 ```
 
-### Compile and Minify for Production
+### Компіляція та мінімізація для виробництва
 
 ```bash
 npm run build
 ```
 
-### Lint with [ESLint](https://eslint.org/)
+### Запустити додаток
+
+```bash
+npm run preview
+```
+
+### Перевікра з [ESLint](https://eslint.org/)
 
 ```bash
 npm run lint
 ```
 
-### Format with [Prettier](https://prettier.io/)
+### Формат з [Prettier](https://prettier.io/)
 
 ```bash
 npm run format
 ```
 
-### Quick Start
-
-```bash
-npm run start
-```
-
-After starting the app on port (5173 as default) you can open
-in your browser helpdesk docs by typing http://localhost:5173/
+Після запуску програми на порту (5173 за замовчуванням) ви можете
+відкрити у службу підтримки браузера, ввівши http://localhost:5173/.

@@ -2,7 +2,7 @@
   "name": "helpdesk-docs",
   "version": "1.0.0",
   "type": "module",
-  "description": "Helpdesk Docs - Web application of technical support",
+  "description": "Helpdesk Docs - Документація сервісної підтримки",
   "author": {
     "name": "Dmitrii Baklai",
     "email": "d.n.baklai@gmail.com",
