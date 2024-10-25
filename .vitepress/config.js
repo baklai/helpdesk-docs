@@ -1,20 +1,11 @@
 import { defineConfig, loadEnv } from 'vitepress';
 import { withPwa } from '@vite-pwa/vitepress';
 
-// const { VITE_APP_BASE_URL, VITE_API_BASE_URL, VITE_DOCS_BASE_URL } = loadEnv(
-//   '',
-//   process.cwd()
-// );
-
 const {
-  VITE_APP_BASE_URL = 'https://default-helpdesk-url.com',
-  VITE_API_BASE_URL = 'https://default-helpdesk-api-url.com',
-  VITE_DOCS_BASE_URL = 'https://default-helpdesk-docs-url.com'
+  VITE_APP_BASE_URL = '/',
+  VITE_API_BASE_URL = '/api',
+  VITE_DOCS_BASE_URL = '/docs'
 } = loadEnv('', process.cwd());
-
-console.log('VITE_APP_BASE_URL:', VITE_APP_BASE_URL);
-console.log('VITE_API_BASE_URL:', VITE_API_BASE_URL);
-console.log('VITE_DOCS_BASE_URL:', VITE_DOCS_BASE_URL);
 
 const NAVBAR = [
   { text: 'Документація', link: '/docs/' },
@@ -80,7 +71,7 @@ export default withPwa(
 
     appearance: true,
     cleanUrls: true,
-    // lastUpdated: true,
+    lastUpdated: false,
 
     lang: 'uk-UA',
     title: 'Довідник',
