@@ -8,7 +8,7 @@ const {
 } = loadEnv('', process.cwd());
 
 const NAVBAR = [
-  { text: 'Документація', link: '/docs/' },
+  { text: 'Документація', link: '/guide/' },
   {
     text: 'Додатки',
     items: [
@@ -31,17 +31,17 @@ const NAVBAR = [
 
 const SIDEBAR = [
   {
-    items: [{ text: 'Вступ', link: '/docs/index' }]
+    items: [{ text: 'Вступ', link: '/guide/index' }]
   },
   {
-    items: [{ text: 'Календар подій', link: '/docs/events-calendar' }]
+    items: [{ text: 'Календар подій', link: '/guide/events-calendar' }]
   },
   {
     items: [
       {
         text: 'Мережева інформація',
         collapsed: false,
-        items: [{ text: 'Мережева інформація', link: '/docs/network-info' }]
+        items: [{ text: 'Мережева інформація', link: '/guide/network-info' }]
       }
     ]
   },
@@ -50,7 +50,7 @@ const SIDEBAR = [
       {
         text: 'Технічна підтримка',
         collapsed: false,
-        items: [{ text: 'Технічна підтримка', link: '/docs/technical-support' }]
+        items: [{ text: 'Технічна підтримка', link: '/guide/technical-support' }]
       }
     ]
   },
@@ -59,7 +59,7 @@ const SIDEBAR = [
       {
         text: 'ПК SysInspector',
         collapsed: false,
-        items: [{ text: 'ПК SysInspector', link: '/docs/pc-sys-inspector' }]
+        items: [{ text: 'ПК SysInspector', link: '/guide/pc-sys-inspector' }]
       }
     ]
   }
@@ -134,7 +134,7 @@ export default withPwa(
       nav: NAVBAR,
 
       sidebar: {
-        '/docs/': SIDEBAR || []
+        '/guide/': SIDEBAR || []
       },
 
       aside: true,
