@@ -12,16 +12,21 @@ const NAVBAR = [
   {
     text: 'Додатки',
     items: [
-      { text: 'Helpdesk', link: VITE_APP_BASE_URL, target: '_blank', rel: 'noopener noreferrer' },
+      {
+        text: 'Helpdesk',
+        link: VITE_APP_BASE_URL || '/',
+        target: '_blank',
+        rel: 'noopener noreferrer'
+      },
       {
         text: 'API Helpdesk',
-        link: VITE_API_BASE_URL,
+        link: VITE_API_BASE_URL || '/api',
         target: '_blank',
         rel: 'noopener noreferrer'
       },
       {
         text: 'HD Довідник',
-        link: VITE_DOCS_BASE_URL,
+        link: VITE_DOCS_BASE_URL || '/docs',
         target: '_blank',
         rel: 'noopener noreferrer'
       }
@@ -140,7 +145,7 @@ export default withPwa(
       aside: true,
 
       editLink: {
-        pattern: 'https://github.com/baklai/helpdesk-docs/edit/main/src/:path',
+        pattern: 'https://github.com/baklai/helpdesk-docs/edit/main/:path',
         text: 'Редагувати цю сторінку на GitHub'
       },
 
