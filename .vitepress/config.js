@@ -67,6 +67,15 @@ const SIDEBAR = [
         items: [{ text: 'ПК SysInspector', link: '/guide/pc-sys-inspector' }]
       }
     ]
+  },
+  {
+    items: [
+      {
+        text: 'ONMAP Сканер',
+        collapsed: false,
+        items: [{ text: 'ONMAP Сканер', link: '/guide/onmap-scanner' }]
+      }
+    ]
   }
 ];
 
